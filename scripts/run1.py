@@ -5,6 +5,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from parser import load_grid, load_domains, to_string
+from solver import solve
+from data import CellType
+from validator import validate
 
 path = ROOT / "instances" / "01_6x6_normal.txt"
 
@@ -19,3 +22,14 @@ print(grid)
 print("Domains:")
 for cell, domain in load_domains(path).items():
     print(cell, domain)
+
+solved = solve(load_domains(path), 6)
+
+if solved is not None:
+    print(solved)
+else: 
+    print("No solution")
+
+print("Starting validation")
+validate(solved)
+
