@@ -5,6 +5,7 @@ class CellType(Enum):
     HEAD = 1
     STICK_H = 2
     STICK_V = 3
+    
 
 
 def is_head(cell: CellType) -> bool:
