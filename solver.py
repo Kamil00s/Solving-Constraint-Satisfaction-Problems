@@ -1,7 +1,7 @@
 # solver.py
 import numpy as np
 
-from constrains import check
+from constraints import check
 from data import CellType
 
 VALUES = (CellType.EMPTY, CellType.HEAD, CellType.STICK_H, CellType.STICK_V)
