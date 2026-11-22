@@ -33,3 +33,18 @@ else:
 print("Starting validation")
 validate(solved)
 
+print(to_string(solved))
+
+print("Strating run with forward checking")
+
+res = solve(load_domains(path),6,fc=True)
+
+if res is not None:
+    print(solved)
+else: 
+    print("No solution")
+
+print("Starting validation")
+validate(res)
+
+print(to_string(res))

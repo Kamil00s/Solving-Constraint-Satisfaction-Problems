@@ -21,3 +21,5 @@ def load_domains(path):
 
 def to_string(grid):
     return "\n".join("".join(INV[cell] for cell in row) for row in grid)
+
+
