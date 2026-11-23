@@ -104,10 +104,10 @@ def solve_with_stats(
     ac3_enabled=False,
     timeout_sec=60.0,
 ):
-    """Evaluate CSP search with configurable FC, MRV/partner heuristic, AC-3, and timeout[cite: 1].
-
+    """
+    Evaluate CSP search with configurable FC, MRV/partner heuristic, AC-3, and timeout.
     Tracks search duration (after CSP construction), variable assignments,
-    backtracking steps, timeout status, and the resulting solution grid[cite: 1].
+    backtracking steps, timeout status, and the resulting solution grid.
     """
     grid = np.full((n, n), None, dtype=object)
     cells = [(i, j) for i in range(n) for j in range(n)]
@@ -125,7 +125,7 @@ def solve_with_stats(
     start_time = time.perf_counter()
 
     def time_exceeded() -> bool:
-        """Enforce the 1-minute (60s) search timeout measured after CSP construction[cite: 1]."""
+        """Enforce the 1-minute (60s) search timeout measured after CSP construction"""
         if time.perf_counter() - start_time >= timeout_sec:
             stats["timed_out"] = True
             return True
@@ -201,7 +201,7 @@ def solve_with_stats(
 
     initial_ok = True
     if ac3_enabled:
-        # Establish initial arc consistency before starting tree search[cite: 1].
+        # Establish initial arc consistency before starting tree search.
         _, initial_ok = ac3(working_domains, grid, n)
 
     def search(assigned_count) -> bool:

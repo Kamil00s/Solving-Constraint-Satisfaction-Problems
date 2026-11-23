@@ -2,7 +2,7 @@
 
 Aufgabenblatt 2 — Constraint Satisfaction Problems
 Künstliche Intelligenz: Grundlagen und Anwendungen, TU Berlin, WS 2026
-Gruppe `<59>`
+Gruppe 59
 
 A CSP solver for **Lollipop** puzzles (<https://de.puzzle-lollipops.com>), evaluated with four
 different search techniques across six puzzle instances of varying size and difficulty.
@@ -42,14 +42,6 @@ pip install numpy
 ## Running
 
 From the project root:
-
-```
-python scripts/run1.py
-
-```
-
-This loads every instance in `instances/`, builds the CSP, runs the solver and verifies each
-solution with the independent validator.
 
 To run the evaluation across all instances in `instances/` and all four search techniques with a
 60-second search timeout and required console metrics (problem instance, solution or timeout,
@@ -109,8 +101,6 @@ solver.py            the search techniques, AC-3, heuristic, and timeout/metrics
 scripts/             runnable entry points
 scripts/run_eval.py  evaluates all four search modes across instances/ with timeout & metrics logging
 instances/           puzzle instances
-tests/               test boards and unit tests
-
 ```
 
 ### Why two implementations of the rules

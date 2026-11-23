@@ -1,3 +1,5 @@
+import contextlib
+import io
 import sys
 from pathlib import Path
 
@@ -42,9 +44,10 @@ def run_all(
         print(f"Backtracking steps: {stats['backtracks']}")
 
         if stats["solution"] is not None:
-            print("Solution:")
+            with contextlib.redirect_stdout(io.StringIO()):
+                valid = validate(stats["solution"])  # Suppress validation output
+            print(f"Solution ({'valid' if valid else 'invalid'}):")
             print(to_string(stats["solution"]))
-            validate(stats["solution"])
         else:
             print("Solution: None (aborted or unsatisfiable)")
 
